@@ -1,0 +1,6 @@
+SHA256 (BOOTAA64.EFI) = 3uVxH6RQLHl2UMPENUF4NgvxEuK4VM/28x56sFlrQ1U=
+SHA256 (apple-boot-firmware-1.1.tgz) = aU+UBVkZnzd13UOrpemhfoJ8MBdr03vRwxRevnyzEEU=
+SHA256 (bsd.rd) = gfMuazQvBgIh53Uo61y8I8VwwpqiXYdSx4ItdUiOiu4=
+SIZE (BOOTAA64.EFI) = 219050
+SIZE (apple-boot-firmware-1.1.tgz) = 697696
+SIZE (bsd.rd) = 17935921
