@@ -1,6 +1,6 @@
 COMMENT=	OpenBSD installer images for the asahi-installer
 
-V=		7.4
+V=		7.5
 DISTNAME=	asahi-installer-images-${V}
 
 SITES.ftp=	http://ftp.openbsd.org/pub/OpenBSD/${V}/arm64/
@@ -8,9 +8,8 @@ SITES.fw=	http://firmware.openbsd.org/firmware/${V}/
 
 DISTFILES.ftp=	BOOTAA64.EFI \
 		bsd.rd 
-DISTFILES.fw=	apple-boot-firmware-1.1.tgz
-
-EXTRACT_ONLY=	apple-boot-firmware-1.1.tgz
+DISTFILES.fw=	apple-boot-firmware-1.3.tgz
+EXTRACT_ONLY=	apple-boot-firmware-1.3.tgz
 
 CATEGORIES=	sysutils
 MAINTAINER=	Tobias Heider <tobhe@openbsd.org>
