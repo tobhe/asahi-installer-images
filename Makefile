@@ -1,13 +1,15 @@
 COMMENT=	OpenBSD installer images for the asahi-installer
 
-V=		7.5
+MAJOR=		7
+MINOR=		5
+V=		${MAJOR}.${MINOR}
 DISTNAME=	asahi-installer-images-${V}
 
 SITES.ftp=	http://ftp.openbsd.org/pub/OpenBSD/${V}/arm64/
 SITES.fw=	http://firmware.openbsd.org/firmware/${V}/
 
 DISTFILES.ftp=	BOOTAA64.EFI \
-		bsd.rd 
+		install${MAJOR}${MINOR}.img
 DISTFILES.fw=	apple-boot-firmware-1.3.tgz
 EXTRACT_ONLY=	apple-boot-firmware-1.3.tgz
 
