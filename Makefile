@@ -1,17 +1,17 @@
 COMMENT=	OpenBSD installer images for the asahi-installer
 
 MAJOR=		7
-MINOR=		5
+MINOR=		6
 V=		${MAJOR}.${MINOR}
 DISTNAME=	asahi-installer-images-${V}
 
-SITES.ftp=	http://ftp.openbsd.org/pub/OpenBSD/${V}/arm64/
+SITES.ftp=	http://cdn.openbsd.org/pub/OpenBSD/${V}/arm64/
 SITES.fw=	http://firmware.openbsd.org/firmware/${V}/
 
 DISTFILES.ftp=	BOOTAA64.EFI \
-		install${MAJOR}${MINOR}.img
-DISTFILES.fw=	apple-boot-firmware-1.3.tgz
-EXTRACT_ONLY=	apple-boot-firmware-1.3.tgz
+		bsd${MAJOR}${MINOR}{bsd}.rd
+DISTFILES.fw=	apple-boot-firmware-1.5.tgz
+EXTRACT_ONLY=	apple-boot-firmware-1.5.tgz
 
 CATEGORIES=	sysutils
 MAINTAINER=	Tobias Heider <tobhe@openbsd.org>
@@ -31,8 +31,9 @@ do-build:
 	mkdir -p ${WRKSRC}/esp/efi/boot
 	cp ${FULLDISTDIR}/BOOTAA64.EFI ${WRKSRC}/esp/efi/boot/bootaa64.efi
 	echo "bootaa64.efi" > ${WRKSRC}/esp/efi/boot/startup.nsh
-	cp ${FULLDISTDIR}/bsd.rd ${WRKSRC}/esp/bsd
-	cd ${WRKSRC} && zip -1 -r openbsd-${V}.zip esp
+	cp ${FULLDISTDIR}/bsd${MAJOR}${MINOR}.rd ${WRKSRC}/esp/bsd
+	cp ${FILESDIR}/logo.icns ${WRKSRC}/logo.icns
+	cd ${WRKSRC} && zip -1 -r openbsd-${V}.zip esp logo.icns
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/asahi-installer-images
